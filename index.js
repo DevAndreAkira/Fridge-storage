@@ -4,6 +4,7 @@ const ul = document.querySelector("tbody");
 const mais = document.querySelector("#mais")
 const menos = document.querySelector("#menos");
 const geladeira = document.querySelector("#geladeira");
+const modal = document.querySelector("#modal");
 let comida = document.querySelector("#imgDoor");
 let macaneta = document.querySelector("#lock");
 
@@ -41,18 +42,15 @@ function gerandoCores() {
   return `#${gerado.length === 6 ? gerado : gerado + "1"}`;
 }
 
-//~ IMAGE FOODS
-// document.querySelector("#input-add").onchange = function () {
-//   if (document.querySelector("#input-add").value === "🍝Pasta") {
-//     comida.src = "./images/food/pasta.png";
-//   }
-//   if (document.querySelector("#input-add").value === "🍞Bread") {
-//     comida.src = "./images/food/toast.png";
-//   }
-//   if (document.querySelector("#input-add").value === "🥚Eggs") {
-//     comida.src = "./images/food/egg.png";
-//   }
-// }
+//~ IMAGE NOTES
+comida.onclick = function () {
+  modal.style.display = "block";
+}
+
+modal.onclick = function () {
+  modal.style.display = "none";
+}
+
 
 //~ ADD AND REMOVE 
 mais.onclick = function () {
@@ -96,7 +94,7 @@ form.onsubmit = function (event) {
   else {
   }
 
-  if (textMany < 1) {
+  if (textMany < 1 || textMany > 99) {
     return
   }
   else {
@@ -118,14 +116,11 @@ form.onsubmit = function (event) {
   document.getElementById("input-many").value = '';
 
   //TODO - IGUALANDO LARGURA CARDS
-  let cardsIcons = document.querySelectorAll("body > div > table > tbody > tr:nth-child(n) > td.titleItem")
+  let cardsIcons = document.querySelectorAll("#example5 > tr:nth-child(n) > td.titleItem")
   cardsIcons.forEach((e, index) => {
     cardsIcons[index].style.width = "auto";
   })
-  cardsIguais(document.querySelectorAll("body > div > table > tbody > tr:nth-child(n) > td.titleItem"));
-
-  // //& VOLTANDO IMG
-  // comida.src = "./images/lunch-bag.png"
+  cardsIguais(document.querySelectorAll("#example5 > tr:nth-child(n) > td.titleItem"));
 
   geladeira.classList.add("animate__animated", "animate__headShake", "animate__faster")
   setTimeout(() => {
@@ -156,14 +151,12 @@ ul.onclick = function (event) {
   }
 
   //TODO - IGUALANDO LARGURA CARDS
-  let cardsIcons = document.querySelectorAll("body > div > table > tbody > tr:nth-child(n) > td.titleItem")
+  let cardsIcons = document.querySelectorAll("#example5 > tr:nth-child(n) > td.titleItem")
   cardsIcons.forEach((e, index) => {
     cardsIcons[index].style.width = "auto";
   })
-  cardsIguais(document.querySelectorAll("body > div > table > tbody > tr:nth-child(n) > td.titleItem"));
+  cardsIguais(document.querySelectorAll("#example5 > tr:nth-child(n) > td.titleItem"));
 
-  // //& VOLTANDO IMG
-  // comida.src = "./images/lunch-bag.png"
 }
 //! REMOVE FUNCTION - FIM
 
@@ -171,7 +164,7 @@ ul.onclick = function (event) {
 //TODO - IGUALANDO LARGURA CARDS
 // var localCards = document.querySelectorAll(".slick-slider .item-padrao");
 
-var localCards = document.querySelectorAll("body > div > table > tbody > tr:nth-child(n) > td.titleItem");
+var localCards = document.querySelectorAll("#example5 > tr:nth-child(n) > td.titleItem");
 function cardsIguais(localCards) {
   let cardsIcons = localCards;
   let alturaCards = 0;

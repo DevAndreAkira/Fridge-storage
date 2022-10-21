@@ -145,3 +145,18 @@ hr {
     border-top-right-radius: 5px;
     opacity: 0;
 }
+
+#imgDoor {
+    cursor: pointer;
+}
+
+#modal {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    display: none;
+}
