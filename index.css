@@ -1,9 +1,8 @@
 body {
-    /* min-height: 100vh; */
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    /* background-image: url(./images/kitchen.jpg); */
     background-image: url(./images/Project.jpg);
     background-size: cover;
     background-position: center;
