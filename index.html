@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script type="text/javascript" src="./index.js" defer=""></script>
+  <link rel="stylesheet" href="./index.css">
+  <link rel="stylesheet" href="./fonts/stylesheet.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.js"
+    integrity="sha512-CX7sDOp7UTAq+i1FYIlf9Uo27x4os+kGeoT7rgwvY+4dmjqV0IuE/Bl5hVsjnQPQiTOhAX1O2r2j5bjsFBvv/A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+  <link rel="shortcut icon" href="./images/lunch-bag.png" type="image/x-icon">
+  <title>Fridge storage</title>
+</head>
+
+<body>
+  <div class="w-3/4 max-w-[370px] min-w-[300px] mx-auto bg-white py-6 px-4 rounded-3xl shadow bg-gray-100 fridger">
+    <h1 class="mb-5 text-2xl text-center">
+      <span class="funnyTitle">F</span>
+      <span class="funnyTitle">r</span>
+      <span class="funnyTitle">i</span>
+      <span class="funnyTitle">g</span>
+      <span class="funnyTitle">e</span>
+      <span class="funnyTitle"> </span>
+      <span class="funnyTitle">s</span>
+      <span class="funnyTitle">t</span>
+      <span class="funnyTitle">o</span>
+      <span class="funnyTitle">r</span>
+      <span class="funnyTitle">a</span>
+      <span class="funnyTitle">g</span>
+      <span class="funnyTitle">e</span>
+    </h1>
+    <form class="">
+      <div class="w-full text-right">
+        <!-- <small class="text-red-500 font-semibold">Max: <span id="countChars">35</span> characters</small> -->
+        <select class="
+      block w-full border 
+      bg-gray-50 border-gray-200 
+      rounded py-2 px-4 leading-tight
+      focus:bg-white 
+      focus:border-gray-500
+      focus:outline-none" id="input-add" name="options" required>
+          <option selected disabled hidden>Choose here</option>
+          <option value="🍝Macarrão" class="">🍝Macarrão</option>
+          <option value="🍞Pão de forma" class="">🍞Pão de forma</option>
+          <option value="🥚Ovos" class="">🥚Ovos</option>
+        </select>
+        <div class="flex items-center	justify-center mt-1">
+          <span class="btn conta material-icons block md:hidden text-blue-500" id="menos">remove_circle</span>
+          <input class="block w-full border 
+          bg-gray-50 border-gray-200 
+          rounded py-2 px-4 leading-tight
+          focus:bg-white 
+          focus:border-gray-500
+          focus:outline-none text-center md:text-left" id="input-many" placeholder="How much..." type="number"
+            required>
+          <span class="btn conta material-icons block md:hidden text-blue-500" id="mais">add_circle</span>
+        </div>
+      </div>
+      <button class="mt-3 py-2 flex items-center justify-center bg-green-500 rounded w-full font-semibold text-white"
+        id="add_item">Save</button>
+    </form>
+    <hr class="my-3" style="background-color:#2c3e50; border:none; height:3px;">
+    <div class="handle bottom"></div>
+
+    <img src="images/lunch-bag.png" alt="Lunch bag" class="w-2/4 mx-auto py-5">
+    <table class="w-full">
+      <tbody class="overflow-hidden shadow">
+      </tbody>
+    </table>
+
+    <!-- <div class="porta"></div> -->
+
+  </div>
+</body>
+
+</html>

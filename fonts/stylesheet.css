@@ -1,0 +1,26 @@
+@font-face {
+    font-family: 'AlphaFridgeMagnets';
+    src: url('AlphaFridgeMagnets.eot');
+    src: url('AlphaFridgeMagnets.eot?#iefix') format('embedded-opentype'),
+        url('AlphaFridgeMagnets.woff2') format('woff2'),
+        url('AlphaFridgeMagnets.woff') format('woff'),
+        url('AlphaFridgeMagnets.ttf') format('truetype'),
+        url('AlphaFridgeMagnets.svg#AlphaFridgeMagnets') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'AlphaFridgeMagnetsAllCap';
+    src: url('AlphaFridgeMagnetsAllCap.eot');
+    src: url('AlphaFridgeMagnetsAllCap.eot?#iefix') format('embedded-opentype'),
+        url('AlphaFridgeMagnetsAllCap.woff2') format('woff2'),
+        url('AlphaFridgeMagnetsAllCap.woff') format('woff'),
+        url('AlphaFridgeMagnetsAllCap.ttf') format('truetype'),
+        url('AlphaFridgeMagnetsAllCap.svg#AlphaFridgeMagnetsAllCap') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
