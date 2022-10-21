@@ -51,7 +51,6 @@ modal.onclick = function () {
   modal.style.display = "none";
 }
 
-
 //~ ADD AND REMOVE 
 mais.onclick = function () {
   document.querySelector("#input-many").value = Number(document.querySelector("#input-many").value) + 1;
