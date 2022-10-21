@@ -87,7 +87,7 @@ form.onsubmit = function (event) {
     many: textMany
   }
 
-  if (textInput == '' || textInput == ' ' || textInput == '  ' || textInput == '   ' || textInput.length > 35) {
+  if (textInput == '' || textInput == ' ' || textInput == '  ' || textInput == '   ' || textInput.length > 35 || textInput === "Choose here") {
     return
   }
   else {
