@@ -67,7 +67,7 @@ if (localStorage.getItem("itens")) {
   let arrayLocal = JSON.parse(localStorage.getItem("itens"));
   arrayLocal.forEach((e) => {
     ul.innerHTML += `<tr class="sorty m-2 border border-gray-200 rounded px-4 py-2 bg-white hover:bg-sky-100 hover:text-sky-900 border-b last:border-none border-gray-200 transition-all duration-300 ease-in-out flex justify-between animate__animated animate__fadeIn">
-    <td class="titleItem">${e.title}</td><td class="manyItens">${"x" + e.many}</td><td class="text-red-700 delete material-icons">cancel</td></tr>`;
+    <td class="arrows material-icons">open_with</td><td class="titleItem">${e.title}</td><td class="manyItens">${"x" + e.many}</td><td class="text-red-700 delete material-icons">cancel</td></tr>`;
   })
 }
 
@@ -103,7 +103,7 @@ form.onsubmit = function (event) {
 
   if (!ul.querySelector("tr")) {
     ul.innerHTML += `<tr class="sorty m-2 border border-gray-200 rounded px-4 py-2 bg-white hover:bg-sky-100 hover:text-sky-900 border-b last:border-none border-gray-200 transition-all duration-300 ease-in-out flex justify-between animate__animated animate__fadeIn">
-  <td class="titleItem">${textInput}</td><td class="manyItens">${"x" + textMany}</td><td class="text-red-700 delete material-icons">cancel</td></tr>`;
+    <td class="arrows material-icons">open_with</td><td class="titleItem">${textInput}</td><td class="manyItens">${"x" + textMany}</td><td class="text-red-700 delete material-icons">cancel</td></tr>`;
   }
   else {
     const li = ul.querySelector("tr").cloneNode(true);
@@ -192,19 +192,19 @@ window.onresize = function () {
   cardsIguais(localCards);
 }
 
-
 //& SORTABLE
-// new Sortable(example5, {
-//   handle: '.sorty',
-//   animation: 150,
-//   store: {
-//     get: function (sortable) {
-//       var order = localStorage.getItem(sortable.options.group.name);
-//       return order ? order.split('|') : [];
-//     },
-//     set: function (sortable) {
-//       var order = sortable.toArray();
-//       localStorage.setItem(sortable.options.group.name, order.join('|'));
-//     }
-//   }
-// }); 
+new Sortable(example5, {
+  handle: '.sorty',
+  animation: 150,
+  store: {
+    get: function (sortable) {
+      var order = localStorage.getItem(sortable.options.group.name);
+      return order ? order.split('|') : [];
+    },
+    set: function (sortable) {
+      var order = sortable.toArray();
+      localStorage.setItem(sortable.options.group.name, order.join('|'));
+    }
+  }
+});
+
