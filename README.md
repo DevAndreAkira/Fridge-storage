@@ -8,6 +8,7 @@
 - [Animate.css](https://animate.style/)
 - [Icons - Materialize](https://materializecss.com/)
 - [Tailwind CSS](https://tailwindcss.com/)
+- [SortableJS](https://sortablejs.github.io/Sortable/)
 
 ## Features
 
@@ -15,6 +16,7 @@
 - Save list on localStorage;
 - Color generator on app title;
 - Tutorial how to use in the note;
+- Order itens;
 - Responsive web design.
 
 
