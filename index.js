@@ -3,7 +3,31 @@ const form = document.querySelector("form");
 const ul = document.querySelector("tbody");
 const mais = document.querySelector("#mais")
 const menos = document.querySelector("#menos");
-let comida = document.querySelector("body > div > img");
+const geladeira = document.querySelector("#geladeira");
+let comida = document.querySelector("#imgDoor");
+let macaneta = document.querySelector("#lock");
+
+let door = document.getElementById("door");
+let portaAberta = document.getElementById("portaAberta");
+let alca = document.getElementById("alca");
+
+macaneta.onclick = function () {
+  portaAberta.style.opacity = "1";
+  alca.style.opacity = "1";
+  door.style.zIndex = "0";
+}
+
+alca.onclick = function () {
+  portaAberta.style.opacity = "0";
+  alca.style.opacity = "0";
+  door.style.zIndex = "-1";
+}
+
+portaAberta.onclick = function () {
+  portaAberta.style.opacity = "0";
+  alca.style.opacity = "0";
+  door.style.zIndex = "-1";
+}
 
 //& CHANGE COLOR LETTER TITLE
 let titleProject = document.querySelectorAll("body > div > h1 > span:nth-child(n).funnyTitle");
@@ -18,17 +42,17 @@ function gerandoCores() {
 }
 
 //~ IMAGE FOODS
-document.querySelector("#input-add").onchange = function () {
-  if (document.querySelector("#input-add").value === "🍝Macarrão") {
-    comida.src = "./images/food/pasta.png";
-  }
-  if (document.querySelector("#input-add").value === "🍞Pão de forma") {
-    comida.src = "./images/food/toast.png";
-  }
-  if (document.querySelector("#input-add").value === "🥚Ovos") {
-    comida.src = "./images/food/egg.png";
-  }
-}
+// document.querySelector("#input-add").onchange = function () {
+//   if (document.querySelector("#input-add").value === "🍝Pasta") {
+//     comida.src = "./images/food/pasta.png";
+//   }
+//   if (document.querySelector("#input-add").value === "🍞Bread") {
+//     comida.src = "./images/food/toast.png";
+//   }
+//   if (document.querySelector("#input-add").value === "🥚Eggs") {
+//     comida.src = "./images/food/egg.png";
+//   }
+// }
 
 //~ ADD AND REMOVE 
 mais.onclick = function () {
@@ -45,12 +69,15 @@ let arrayItem = (localStorage.getItem("itens")) ? JSON.parse(localStorage.getIte
 if (localStorage.getItem("itens")) {
   let arrayLocal = JSON.parse(localStorage.getItem("itens"));
   arrayLocal.forEach((e) => {
-    ul.innerHTML += `<tr class="m-2 border border-gray-200 rounded px-4 py-2 bg-white hover:bg-sky-100 hover:text-sky-900 border-b last:border-none border-gray-200 transition-all duration-300 ease-in-out flex justify-between animate__animated animate__fadeIn">
+    ul.innerHTML += `<tr class="sorty m-2 border border-gray-200 rounded px-4 py-2 bg-white hover:bg-sky-100 hover:text-sky-900 border-b last:border-none border-gray-200 transition-all duration-300 ease-in-out flex justify-between animate__animated animate__fadeIn">
     <td class="titleItem">${e.title}</td><td class="manyItens">${"x" + e.many}</td><td class="text-red-700 delete material-icons">cancel</td></tr>`;
   })
 }
 
 document.querySelector("body > div.w-3\\/4.max-w-\\[370px\\].mx-auto").classList.add("animate__animated", "animate__fadeIn");
+setTimeout(() => {
+  document.querySelector("body > div.w-3\\/4.max-w-\\[370px\\].mx-auto").classList.remove("animate__animated", "animate__fadeIn");
+}, 1000);
 
 //* SUBMIT FUNCTION
 form.onsubmit = function (event) {
@@ -78,7 +105,7 @@ form.onsubmit = function (event) {
   }
 
   if (!ul.querySelector("tr")) {
-    ul.innerHTML += `<tr class="m-2 border border-gray-200 rounded px-4 py-2 bg-white hover:bg-sky-100 hover:text-sky-900 border-b last:border-none border-gray-200 transition-all duration-300 ease-in-out flex justify-between animate__animated animate__fadeIn">
+    ul.innerHTML += `<tr class="sorty m-2 border border-gray-200 rounded px-4 py-2 bg-white hover:bg-sky-100 hover:text-sky-900 border-b last:border-none border-gray-200 transition-all duration-300 ease-in-out flex justify-between animate__animated animate__fadeIn">
   <td class="titleItem">${textInput}</td><td class="manyItens">${"x" + textMany}</td><td class="text-red-700 delete material-icons">cancel</td></tr>`;
   }
   else {
@@ -97,15 +124,20 @@ form.onsubmit = function (event) {
   })
   cardsIguais(document.querySelectorAll("body > div > table > tbody > tr:nth-child(n) > td.titleItem"));
 
-  //& VOLTANDO IMG
-  comida.src = "./images/lunch-bag.png"
+  // //& VOLTANDO IMG
+  // comida.src = "./images/lunch-bag.png"
+
+  geladeira.classList.add("animate__animated", "animate__headShake", "animate__faster")
+  setTimeout(() => {
+    geladeira.classList.remove("animate__animated", "animate__headShake", "animate__faster")
+  }, 500);
 }
 
 //! REMOVE FUNCTION
 ul.onclick = function (event) {
   if (event.target.classList.contains("delete")) {
 
-    event.target.parentElement.classList.add("animate__animated", "animate__fadeOut");
+    event.target.parentElement.classList.add("animate__animated", "animate__fadeOut", "animate__faster");
     setTimeout(() => {
       event.target.parentElement.remove();
 
@@ -120,7 +152,7 @@ ul.onclick = function (event) {
         return teste !== e.title + "x" + e.many
       });
       localStorage.setItem("itens", JSON.stringify(arrayItem));
-    }, 750);
+    }, 250);
   }
 
   //TODO - IGUALANDO LARGURA CARDS
@@ -130,8 +162,8 @@ ul.onclick = function (event) {
   })
   cardsIguais(document.querySelectorAll("body > div > table > tbody > tr:nth-child(n) > td.titleItem"));
 
-  //& VOLTANDO IMG
-  comida.src = "./images/lunch-bag.png"
+  // //& VOLTANDO IMG
+  // comida.src = "./images/lunch-bag.png"
 }
 //! REMOVE FUNCTION - FIM
 
@@ -167,3 +199,20 @@ window.onresize = function () {
   // Executando Função ao Redimensionar
   cardsIguais(localCards);
 }
+
+
+//& SORTABLE
+// new Sortable(example5, {
+//   handle: '.sorty',
+//   animation: 150,
+//   store: {
+//     get: function (sortable) {
+//       var order = localStorage.getItem(sortable.options.group.name);
+//       return order ? order.split('|') : [];
+//     },
+//     set: function (sortable) {
+//       var order = sortable.toArray();
+//       localStorage.setItem(sortable.options.group.name, order.join('|'));
+//     }
+//   }
+// }); 
