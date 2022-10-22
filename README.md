@@ -8,7 +8,6 @@
 - [Animate.css](https://animate.style/)
 - [Icons - Materialize](https://materializecss.com/)
 - [Tailwind CSS](https://tailwindcss.com/)
-- [SortableJS](https://sortablejs.github.io/Sortable/)
 
 ## Features
 
