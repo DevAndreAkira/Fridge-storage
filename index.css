@@ -126,7 +126,8 @@ hr {
     right: -10px;
     z-index: 2;
     border-radius: 0px 0.25rem 0.25rem 0px;
-    opacity: 0;
+    opacity: 1 !important;
+    display: none;
 }
 
 #alca {
@@ -163,7 +164,7 @@ hr {
 #example5 {
     background-color: whitesmoke;
 }
-
+/* 
 #example5>tr {
     position: relative;
 }
@@ -175,7 +176,7 @@ hr {
     margin: auto;
     cursor: move;
     /* font-size: 20px; */
-}
+} */
 
 .titleItem {
     margin-left: 17px;
