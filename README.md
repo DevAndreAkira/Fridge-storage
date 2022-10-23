@@ -15,7 +15,6 @@
 - Save list on localStorage;
 - Color generator on app title;
 - Tutorial how to use in the note;
-- Order itens;
 - Responsive web design.
 
 
